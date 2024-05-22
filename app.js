@@ -31,3 +31,18 @@ let htmlQuiz =[
 let questionCount = 0
 
 let score = 0
+
+let question = document.getElementById("question")
+let intput_1 = document.getElementById("option_1")
+let intput_2 = document.getElementById("option_2")
+let intput_3 = document.getElementById("option_3")
+let intput_4 = document.getElementById("option_4")
+let label_1 = document.getElementById("val_1")
+let label_2 = document.getElementById("val_2")
+let label_3 = document.getElementById("val_3")
+let label_4 = document.getElementById("val_4")
+
+function renderQuestion(){
+console.log(htmlQuiz[questionCount])
+}
+window.onload = renderQuestion()
