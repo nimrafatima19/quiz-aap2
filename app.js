@@ -1,11 +1,11 @@
-let htmlQuiz =[
+let htmlQuiz = [
     {
-       que: "1. Who is making web Standards?",
-       opt1: "Google",
-       opt2: "Microsoft",
-       opt3: "World Wide Web",
-       opt4: "Mozrella",
-       ans: "Worl Wide Web"
+        que: "1. Who is making web Standards?",
+        opt1: "Google",
+        opt2: "Microsoft",
+        opt3: "World Wide Web",
+        opt4: "Mozrella",
+        ans: "Worl Wide Web"
     },
 
     {
@@ -41,8 +41,53 @@ let label_1 = document.getElementById("val_1")
 let label_2 = document.getElementById("val_2")
 let label_3 = document.getElementById("val_3")
 let label_4 = document.getElementById("val_4")
+let answer = document.getElementsByName("answer")
 
-function renderQuestion(){
-console.log(htmlQuiz[questionCount])
+function renderQuestion() {
+    question.innerHTML = htmlQuiz[questionCount].que
+    label_1.innerHTML = htmlQuiz[questionCount].opt1
+    label_2.innerHTML = htmlQuiz[questionCount].opt2
+    label_3.innerHTML = htmlQuiz[questionCount].opt3
+    label_4.innerHTML = htmlQuiz[questionCount].opt4
+
+    intput_1.value = htmlQuiz[questionCount].opt1
+    intput_2.value = htmlQuiz[questionCount].opt2
+    intput_3.value = htmlQuiz[questionCount].opt3
+    intput_4.value = htmlQuiz[questionCount].opt4
+
 }
+
+function deSelect(){
+
+    for (i=0; i < answer.length; i++){
+
+        answer[i].checked = false;
+
+    }
+
+}
+
+
+function next() {
+
+    if( questionCount < htmlQuiz.length-1){
+        questionCount++
+        renderQuestion()
+        
+        deSelect()
+
+    }
+
+}
+
+
+
+
+
 window.onload = renderQuestion()
+
+
+
+
+
+
