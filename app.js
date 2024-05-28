@@ -5,7 +5,7 @@ let htmlQuiz = [
         opt2: "Microsoft",
         opt3: "World Wide Web",
         opt4: "Mozrella",
-        ans: "Worl Wide Web"
+        ans: "World Wide Web"
     },
 
     {
@@ -57,9 +57,9 @@ function renderQuestion() {
 
 }
 
-function deSelect(){
+function deSelect() {
 
-    for (i=0; i < answer.length; i++){
+    for (i = 0; i < answer.length; i++) {
 
         answer[i].checked = false;
 
@@ -70,10 +70,23 @@ function deSelect(){
 
 function next() {
 
-    if( questionCount < htmlQuiz.length-1){ //.length-1 for last index number
+    for (i = 0; i < answer.length; i++) {
+
+        if (answer[i].checked) {
+
+            if (answer[i].value === htmlQuiz[questionCount].ans) {
+                score++
+                console.log(score)
+            }
+
+
+        }
+    }
+
+ if (questionCount < htmlQuiz.length - 1) { //.length-1 for last index number
         questionCount++
         renderQuestion()
-        
+
         deSelect()
 
     }
