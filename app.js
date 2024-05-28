@@ -41,7 +41,7 @@ let label_1 = document.getElementById("val_1")
 let label_2 = document.getElementById("val_2")
 let label_3 = document.getElementById("val_3")
 let label_4 = document.getElementById("val_4")
-let answer = document.getElementsByName("answer")
+let answer = document.getElementsByName("answer")// for inputs 
 
 function renderQuestion() {
     question.innerHTML = htmlQuiz[questionCount].que
@@ -50,7 +50,7 @@ function renderQuestion() {
     label_3.innerHTML = htmlQuiz[questionCount].opt3
     label_4.innerHTML = htmlQuiz[questionCount].opt4
 
-    intput_1.value = htmlQuiz[questionCount].opt1
+    intput_1.value = htmlQuiz[questionCount].opt1 // for scoring
     intput_2.value = htmlQuiz[questionCount].opt2
     intput_3.value = htmlQuiz[questionCount].opt3
     intput_4.value = htmlQuiz[questionCount].opt4
@@ -70,7 +70,7 @@ function deSelect(){
 
 function next() {
 
-    if( questionCount < htmlQuiz.length-1){
+    if( questionCount < htmlQuiz.length-1){ //.length-1 for last index number
         questionCount++
         renderQuestion()
         
@@ -79,9 +79,6 @@ function next() {
     }
 
 }
-
-
-
 
 
 window.onload = renderQuestion()
