@@ -32,6 +32,7 @@ let questionCount = 0
 
 let score = 0
 
+let quiz = document.getElementById("quiz")
 let question = document.getElementById("question")
 let intput_1 = document.getElementById("option_1")
 let intput_2 = document.getElementById("option_2")
@@ -42,6 +43,17 @@ let label_2 = document.getElementById("val_2")
 let label_3 = document.getElementById("val_3")
 let label_4 = document.getElementById("val_4")
 let answer = document.getElementsByName("answer")// for inputs 
+// result id's
+
+let result = document.getElementById("result");
+let per = document.getElementById("per");
+let announced = document.getElementById("announced");
+let correct = document.getElementById("correct");
+let total = document.getElementById("total");
+
+result.style.display= "none"
+
+
 
 function renderQuestion() {
     question.innerHTML = htmlQuiz[questionCount].que
@@ -100,8 +112,39 @@ function next() {
 
     }
 
+    else{
+        show()
+       
+    }
+
 }
 
+//  result function
+
+function show() {
+
+    result.style.display = "block"
+    quiz.style.display = "none"
+
+    let percentage = Math.floor(score / htmlQuiz.length*100)
+
+    per.innerHTML = percentage + "%"
+
+    if (percentage >= 70) {
+
+        announced.innerHTML = "You have pass"
+    }
+
+   else {
+        announced.innerHTML = "You have failed"
+    }
+
+    correct.innerHTML = score
+
+    total.innerHTML = htmlQuiz.length
+    
+
+}
 
 window.onload = renderQuestion()
 
