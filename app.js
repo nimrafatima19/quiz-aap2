@@ -70,11 +70,15 @@ function deSelect() {
 
 function next() {
 
+    let radioBtn = false
+
     for (i = 0; i < answer.length; i++) {
 
         if (answer[i].checked) {
 
-            if (answer[i].value === htmlQuiz[questionCount].ans) {
+             radioBtn = true;
+
+            if (answer[i].value == htmlQuiz[questionCount].ans) {
                 score++
                 console.log(score)
             }
@@ -83,7 +87,12 @@ function next() {
         }
     }
 
- if (questionCount < htmlQuiz.length - 1) { //.length-1 for last index number
+    if( radioBtn === false){
+
+        alert("Please selecr any option")
+    }
+
+    else if (questionCount < htmlQuiz.length - 1) { //.length-1 for last index number
         questionCount++
         renderQuestion()
 
