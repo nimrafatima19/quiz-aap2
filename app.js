@@ -82,6 +82,8 @@ function deSelect() {
 
 function next() {
 
+
+// function for scoring
     let radioBtn = false
 
     for (i = 0; i < answer.length; i++) {
@@ -101,9 +103,10 @@ function next() {
 
     if( radioBtn === false){
 
-        alert("Please selecr any option")
+        alert("Please select any option")
     }
 
+    // for question increment
     else if (questionCount < htmlQuiz.length - 1) { //.length-1 for last index number
         questionCount++
         renderQuestion()
